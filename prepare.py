@@ -13,6 +13,7 @@ import json
 import nltk
 from nltk.tokenize.toktok import ToktokTokenizer
 from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
 nltk.download('wordnet')
 nltk.download('stopwords')
 
