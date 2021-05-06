@@ -81,9 +81,8 @@ def remove_stopwords(text, extra_words=[], exclude_words=[]):
 Takes in a dataframe with original text and produces columns for each of the functions above applied
 '''
 
-def make_prepped_columns(df):
-    df.rename(columns = {'content': 'original'}, inplace = True)
-    df['clean'] = df['original'].apply(lambda x: basic_clean(x))
+def make_prepped_columns(df, column):
+    df['clean'] = df[column].apply(lambda x: basic_clean(x))
     df['lemmatized'] = df['clean'].apply(lambda x: tokenize(x))
     df['stemmed'] = df['lemmatized'].apply(lambda x: stem(x))
     df['lemmatized'] = df['lemmatized'].apply(lambda x: lemmatize(x))
