@@ -245,9 +245,6 @@ def add_language_dummies_and_length_feature(df):
     df['has_go'] = df['has_go'].fillna(0)
     df['has_go'] = df['has_go'].astype(int)
 
-
-
-
     return df
 
 '''
